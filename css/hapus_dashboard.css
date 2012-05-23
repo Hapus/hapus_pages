@@ -1,0 +1,52 @@
+/* Commons */
+#hapus_dashboard{
+	float: left;
+	width: 100%;
+	margin: 0.5em 0 1.5em 0;
+}
+#hapus_dashboard ul, #hapus_dashboard li{
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+
+/* Common styling for all blocks */
+.dashboardBlock{
+	float: left;
+	width: 31.5%;
+	word-wrap: break-word;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-size: 0.9em;
+	background: #f8f8f8;
+	border-bottom: solid 1px #f1f1f1;
+	color: #9c9c9c;
+}
+.dashboardBlock h3{
+	color: #f16022;
+	background: #efefef;
+	margin: 0;
+	padding: 0 1em;
+	height: 2.5em;
+	line-height: 2.5em;
+	font-size: 1.1em;
+	font-weight: normal;
+}
+.dashboardBlock .hbContent{
+	padding: 0.5em 1em;
+	line-height: 2em;
+}
+#hapus_dashboard .right{
+	float: right;
+}
+#hapus_dashboard .center{
+	margin-left: 2.3em;
+}
+
+/* API Key */
+#apiKey{
+	width: 78%;
+	font-family: 'Courier';
+	color: #9c9c9c;
+}

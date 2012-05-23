@@ -1,0 +1,25 @@
+<?php
+
+/**
+ *
+ * This module provides several pages for the Hapus PDF gen app.
+ *
+ * This version is for Drupal 7.
+ *
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function hapus_pages_menu() {
+
+  $items['user/dashboard'] = array(
+   'title' => 'Dashboard',
+   'description' => 'Your Dashboard',
+   'page callback' => 'render_hapus_dashboard',
+   'access arguments' => array('access content'),
+   'file' => 'hapus_dashboard.inc'
+  );
+
+  return $items;
+}
