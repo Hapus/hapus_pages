@@ -12,7 +12,7 @@
  * Implements hook_menu().
  */
 function hapus_pages_menu() {
-
+  //The Dashboard and user reports
   $items['user/dashboard'] = array(
    'title' => 'Dashboard',
    'description' => 'Your Dashboard',
@@ -21,5 +21,85 @@ function hapus_pages_menu() {
    'file' => 'hapus_dashboard.inc'
   );
 
+  //The Pricing menu
+  $items['Pricing/pricing_table'] = array(
+   'title' => 'Pricing table',
+   'description' => 'Pricing table',
+   'page callback' => 'render_hapus_pricing_table',
+   'access arguments' => array('access content'),
+   'file' => 'hapus_pages.inc',
+   'menu_name' => 'menu-pricing-menu',
+   'weight' => -50
+  );
+
+  //The Documentation menu
+  $items['Documentation/API'] = array(
+   'title' => 'API',
+   'description' => 'API documentation',
+   'page callback' => 'render_hapus_api',
+   'access arguments' => array('access content'),
+   'file' => 'hapus_pages.inc',
+   'menu_name' => 'menu-documentation-menu',
+   'weight' => 1
+  );
+  $items['Documentation/options'] = array(
+   'title' => 'PDF Options',
+   'description' => 'A comprehensive list of options you can provide for PDF generation',
+   'page callback' => 'render_hapus_options',
+   'access arguments' => array('access content'),
+   'file' => 'hapus_pages.inc',
+   'menu_name' => 'menu-documentation-menu',
+   'weight' => 2
+  );
+
+  //Stand alones
+  $items['api-example'] = array(
+   'title' => 'API example',
+   'description' => 'API example',
+   'page callback' => 'render_hapus_api_example',
+   'access arguments' => array('access content'),
+   'file' => 'hapus_pages.inc'
+  );
+  $items['page-sizes'] = array(
+   'title' => 'Supported page sizes',
+   'description' => 'A list of all supported page sizes',
+   'page callback' => 'render_hapus_page_sizes',
+   'access arguments' => array('access content'),
+   'file' => 'hapus_pages.inc'
+  );
+
   return $items;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function hapus_pages_theme() {
+  return array(
+    'pricing_table' => array(
+      'template' => 'templates/pricing_table',
+    ),
+    'api' => array(
+      'template' => 'templates/api',
+    ),
+    'api-example' => array(
+      'template' => 'templates/api_example',
+    ),
+    'gen-options' => array(
+      'template' => 'templates/gen-options',
+    ),
+    'page-sizes' => array(
+      'template' => 'templates/page-sizes',
+    ),
+  );
+}
+
+/**
+ * Implements hook_theme().
+ */
+function hapus_pages_form_alter(&$form, &$form_state, $form_id) {
+  if(in_array($form_id, array('user_login', 'user_register_form'))){
+    drupal_set_title("Login now");
+    drupal_add_css(drupal_get_path('module', 'hapus_pages') . '/css/hapus_login.css');
+  }
 }

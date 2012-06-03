@@ -1,0 +1,101 @@
+/* Pricing table containers*/
+#ptContainer {
+	float: left;
+	width: 100%;
+	margin: 1em 0 0.5em 0;
+}
+#ptParent {
+	float: left;
+	width: 100%;
+}
+#ptLeft, #ptRight, #ptCentre{
+	float: left;
+	width: 33%;
+	border: solid 1px #f2f2f2;
+}
+#ptLeft{
+	border-right: none;
+}
+#ptRight{
+	border-left: none;
+}
+#ptContainer sup a{
+	color: #f8622d;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+/* Pricing table UL*/
+#ptParent .ptList{
+	text-align: center;
+	list-style-type: none;
+	margin: 0;
+}
+.item-list .ptList li {
+	font-size: 0.85em;
+	color: #a2a2a2;
+	border-bottom: solid 1px #f2f2f2;
+	margin: 0;
+	padding: 8px 0;
+}
+.ptList li.first{
+	padding: 16px 0;
+}
+.ptList li.last{
+	border-bottom: none;
+	padding: 12px;
+}
+.ptList h6{
+	color: #f8622d;
+	font-size: 1.8em;
+	margin: 0;
+}
+.ptPrice{
+	font-size: 1.4em;
+	color: #777;
+	margin: 0.5em 0 0.3em 0;
+}
+.ptPrice strong{
+	color: #292929;
+}
+
+/* Pro plan pricing table */
+#ptCentre {
+	margin-top: -18px;
+	box-shadow: 0 0 30px 3px #F5F5F5;
+}
+#ptCentre li {
+	background: #fff;
+}
+#pro li.first{
+	padding: 0 0 25px 0;
+}
+#pro li.last{
+	padding: 20px 0;
+}
+#pro .ptPrice strong{
+	color: #f15a23
+}
+#pro .ptByLine{
+	color: #e38c11;
+}
+#proTriangle{
+	border-bottom: 35px solid transparent;
+	border-right: 35px solid #F26C13;
+	border-top: 0 solid transparent;
+	position: relative;
+	margin-bottom: -10px;
+}
+#proTriangle:after{
+	color: #fff;
+	content: "u";
+	float: right;
+	font-family: "Pictos Custom";
+	font-size: 1.3em;
+	margin: 4px -31px 0 0;
+}
+
+/* Help */
+#ptDesc{
+	display: none;
+}

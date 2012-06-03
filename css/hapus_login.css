@@ -1,0 +1,10 @@
+.toboggan-unified #login-message{
+	display: none;
+}
+.toboggan-unified #login-links a.lt-active, .toboggan-unified #login-links a.lt-active:hover, .toboggan-unified #login-links a{
+	border: none;
+}
+.toboggan-unified #login-links a {
+	background: #f2f2f2;
+	width: 20em;
+}

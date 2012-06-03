@@ -1,0 +1,19 @@
+/* Col group styling */
+.optionsTable td{
+	font-style: italic;
+}
+.optionsTable td:first-child{
+	color: #444;
+	font-style: normal;
+}
+.optionsTable td:last-child{
+	font-style: normal;
+}
+
+/*Sections styling */
+.optionsSection{
+	margin-top: 3em;
+}
+#genericOptions{
+	margin-top: 0;
+}

@@ -3,3 +3,5 @@ description = A set of specific pages specified for the Hapus PDF gen app.
 package = Hapus
 core = 7.x
 version = "7.x-1.0"
+dependencies[] = colorbox
+dependencies[] = colorbox_node
