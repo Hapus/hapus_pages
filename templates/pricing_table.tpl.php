@@ -25,7 +25,7 @@
 	$pt['freemium']['items'][] = 'Unlimited apps<sup>' . _createInlineHelp(2, 'help-unlimited-apps') . '</sup>';
 	$pt['freemium']['items'][] = 'Full font support';
 	$pt['freemium']['items'][] = 'E-mail support';
-	$pt['freemium']['items'][] = '<input class="form-submit light-gray" type="submit" value="Sign up" />';
+	$pt['freemium']['items'][] = l('<input class="form-submit light-gray" type="submit" value="Sign up" />', 'user/register', array('html' => true, 'attributes' => array('class' => 'button-link')));
 
 	$pt['pro']['type'] = 'ul';
 	$pt['pro']['title'] = null;
