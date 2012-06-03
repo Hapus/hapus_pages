@@ -40,7 +40,7 @@
 	$genericOptions[] = array('--margin-top', '&lt;integer&gt' , 'Set the page top margin (default 10mm)');
 	$genericOptions[] = array('--orientation', '&lt;orientation&gt' , 'Set orientation to Landscape or Portrait (default Portrait)');
 	$genericOptions[] = array('--page-height', '&lt;integer&gt' , 'Page height');
-	$genericOptions[] = array('--page-size', '&lt;string&gt' , 'Set paper size to: A4, Letter, etc (default A4). See the ' . l('list of supported sizes', 'page-sizes/?height=500&width=500', array('attributes' => array('class' => 'colorbox-node'))) . '.');
+	$genericOptions[] = array('--page-size', '&lt;string&gt' , 'Set paper size to: A4, Letter, etc (default A4). See the ' . l('list of supported sizes', 'Documentation/page_options', array('attributes' => array('TARGET' => '_BLANK'))) . '.');
 	$genericOptions[] = array('--page-width', '&lt;integer&gt' , 'Page width');
 
 	//All page options

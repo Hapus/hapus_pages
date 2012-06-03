@@ -35,35 +35,59 @@ function hapus_pages_menu() {
   //The Documentation menu
   $items['Documentation/API'] = array(
    'title' => 'API',
-   'description' => 'API documentation',
-   'page callback' => 'render_hapus_api',
+   'description' => 'Sprint PDF API documentation',
+   'page callback' => 'render_hapus_documentation',
    'access arguments' => array('access content'),
    'file' => 'hapus_pages.inc',
    'menu_name' => 'menu-documentation-menu',
    'weight' => 1
   );
   $items['Documentation/options'] = array(
-   'title' => 'PDF Options',
-   'description' => 'A comprehensive list of options you can provide for PDF generation',
-   'page callback' => 'render_hapus_options',
+   'title' => 'PDF options',
+   'description' => 'Sprint PDF page generation options',
+   'page callback' => 'render_hapus_documentation',
    'access arguments' => array('access content'),
    'file' => 'hapus_pages.inc',
    'menu_name' => 'menu-documentation-menu',
    'weight' => 2
   );
+  $items['Documentation/page_options'] = array(
+   'title' => 'Page sizes',
+   'description' => 'Sprint PDF page size options',
+   'page callback' => 'render_hapus_documentation',
+   'access arguments' => array('access content'),
+   'file' => 'hapus_pages.inc',
+   'menu_name' => 'menu-documentation-menu',
+   'weight' => 3
+  );
+  $items['Documentation/font_list'] = array(
+   'title' => 'Font list',
+   'description' => 'All currently supported fonts',
+   'page callback' => 'render_hapus_documentation',
+   'access arguments' => array('access content'),
+   'file' => 'hapus_pages.inc',
+   'menu_name' => 'menu-documentation-menu',
+   'weight' => 4
+  );
+  
+
+  //The Features menu
+  $items['Features/pricing'] = array(
+   'title' => 'Sprint PDF Pricing',
+   'description' => 'Pricing features for Sprint PDF',
+   'page callback' => 'render_hapus_features',
+   'access arguments' => array('access content'),
+   'file' => 'hapus_pages.inc',
+   'menu_name' => 'menu-features-menu',
+   'weight' => 1
+  );
+  
 
   //Stand alones
   $items['api-example'] = array(
    'title' => 'API example',
    'description' => 'API example',
    'page callback' => 'render_hapus_api_example',
-   'access arguments' => array('access content'),
-   'file' => 'hapus_pages.inc'
-  );
-  $items['page-sizes'] = array(
-   'title' => 'Supported page sizes',
-   'description' => 'A list of all supported page sizes',
-   'page callback' => 'render_hapus_page_sizes',
    'access arguments' => array('access content'),
    'file' => 'hapus_pages.inc'
   );
@@ -76,20 +100,26 @@ function hapus_pages_menu() {
  */
 function hapus_pages_theme() {
   return array(
+    //Pricing pages
     'pricing_table' => array(
       'template' => 'templates/pricing_table',
     ),
-    'api' => array(
-      'template' => 'templates/api',
-    ),
+    //Stand-alone pages
     'api-example' => array(
       'template' => 'templates/api_example',
+    ),
+    //Documentation pages
+    'api' => array(
+      'template' => 'templates/api',
     ),
     'gen-options' => array(
       'template' => 'templates/gen-options',
     ),
-    'page-sizes' => array(
-      'template' => 'templates/page-sizes',
+    'page-options' => array(
+      'template' => 'templates/page-options',
+    ),
+    'font-list' => array(
+      'template' => 'templates/font-list',
     ),
   );
 }

@@ -22,13 +22,9 @@
 	$pt['freemium']['attributes'] = array('id' => 'freemium', 'class' => 'ptList');
 	$pt['freemium']['items'][] = '<h6>Freemium</h6><div class="ptPrice"><strong>' . $freemium->field_cost[$freemium->language][0]['value'] . '$</strong>/month</div><div class="ptByLine">Best bet for any freelancer</div>';
 	$pt['freemium']['items'][] = number_format($freemium->field_monthly_limit[$freemium->language][0]['value']) . ' PDFs<sup>' . _createInlineHelp(1, 'help-freemium-monthy-limit') . '</sup>';
-	$pt['freemium']['items'][] = 'Full font support';
 	$pt['freemium']['items'][] = 'Unlimited apps<sup>' . _createInlineHelp(2, 'help-unlimited-apps') . '</sup>';
-	$pt['freemium']['items'][] = 'Commodo gothica aliquip';
-	$pt['freemium']['items'][] = 'Commodo gothica aliquip';
-	$pt['freemium']['items'][] = 'Commodo gothica aliquip';
-	$pt['freemium']['items'][] = 'Commodo gothica aliquip';
-	$pt['freemium']['items'][] = 'Commodo gothica aliquip';
+	$pt['freemium']['items'][] = 'Full font support';
+	$pt['freemium']['items'][] = 'E-mail support';
 	$pt['freemium']['items'][] = '<input class="form-submit light-gray" type="submit" value="Sign up" />';
 
 	$pt['pro']['type'] = 'ul';
@@ -36,13 +32,9 @@
 	$pt['pro']['attributes'] = array('id' => 'pro', 'class' => 'ptList');
 	$pt['pro']['items'][] = '<div id="proTriangle"></div><h6>Pro</h6><div class="ptPrice"><strong>' . $pro->field_cost[$pro->language][0]['value'] . '$</strong>/month</div><div class="ptByLine">Most popular plan</div>';
 	$pt['pro']['items'][] = number_format($pro->field_monthly_limit[$pro->language][0]['value']) . ' PDFs<sup>' . _createInlineHelp(1, 'help-pro-monthy-limit') . '</sup>';
-	$pt['pro']['items'][] = 'Full font support';
 	$pt['pro']['items'][] = 'Unlimited apps<sup>' . _createInlineHelp(2, 'help-unlimited-apps') . '</sup>';
-	$pt['pro']['items'][] = 'Commodo gothica aliquip';
-	$pt['pro']['items'][] = 'Commodo gothica aliquip';
-	$pt['pro']['items'][] = 'Commodo gothica aliquip';
-	$pt['pro']['items'][] = 'Commodo gothica aliquip';
-	$pt['pro']['items'][] = 'Commodo gothica aliquip';
+	$pt['pro']['items'][] = 'Full font support';
+	$pt['pro']['items'][] = 'E-mail support';
 	$pt['pro']['items'][] = $comingSoonLink;
 
 	$pt['epic']['type'] = 'ul';
@@ -50,13 +42,9 @@
 	$pt['epic']['attributes'] = array('id' => 'epic', 'class' => 'ptList');
 	$pt['epic']['items'][] = '<h6>Epic</h6><div class="ptPrice"><strong>' . $epic->field_cost[$epic->language][0]['value'] . '$</strong>/month</div><div class="ptByLine">For large applications</div>';
 	$pt['epic']['items'][] = number_format($epic->field_monthly_limit[$epic->language][0]['value']) . ' PDFs<sup>' . _createInlineHelp(1, 'help-epic-monthy-limit') . '</sup>';
-	$pt['epic']['items'][] = 'Full font support';
 	$pt['epic']['items'][] = 'Unlimited apps<sup>' . _createInlineHelp(2, 'help-unlimited-apps') . '</sup>';
-	$pt['epic']['items'][] = 'Commodo gothica aliquip';
-	$pt['epic']['items'][] = 'Commodo gothica aliquip';
-	$pt['epic']['items'][] = 'Commodo gothica aliquip';
-	$pt['epic']['items'][] = 'Commodo gothica aliquip';
-	$pt['epic']['items'][] = 'Commodo gothica aliquip';
+	$pt['epic']['items'][] = 'Full font support';
+	$pt['epic']['items'][] = 'E-mail support';
 	$pt['epic']['items'][] = $comingSoonLink;
 
 	//Help text

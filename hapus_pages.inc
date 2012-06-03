@@ -9,11 +9,27 @@
 	}
 
 	/**
-	 * Tpl.php pointer for API page
+	 * Tpl.php pointer for all documentation pages
 	 */
-	function render_hapus_api(){
-		drupal_set_title('REST API Documentation');
-		return theme('api');
+	function render_hapus_documentation(){
+		switch(arg(1)){
+			case 'API':
+				drupal_set_title('Sprint PDF API');
+				return theme('api');
+				break;
+			case 'options':
+				drupal_set_title('PDF generation options');
+				return theme('gen-options');
+				break;
+			case 'page_options':
+				drupal_set_title('Page size options');
+				return theme('page-options');
+				break;
+			case 'font_list':
+				drupal_set_title('All currently supported fonts');
+				return theme('font-list');
+				break;
+		}
 	}
 
 	/**
@@ -22,22 +38,6 @@
 	function render_hapus_api_example(){
 		drupal_set_title('REST API examples');
 		return theme('api-example');
-	}
-
-	/**
-	 * Tpl.php pointer for options (options related to wkhtmltopdf)
-	 */
-	function render_hapus_options(){
-		drupal_set_title('PDF generation options');
-		return theme('gen-options');
-	}
-
-	/**
-	 * Tpl.php pointer for page size options (Qt)
-	 */
-	function render_hapus_page_sizes(){
-		drupal_set_title('Supported page sizes');
-		return theme('page-sizes');
 	}
 
 	/**
