@@ -1,17 +1,20 @@
 <?php
-	exec('/opt/local/bin/convert -list font', $output, $code);
+	//This will run on Ubuntu systems
+	exec('/usr/bin/convert -list font', $output, $code);
+
+	//This will run on Mac systems
+	if($code == 127)
+		exec('/opt/local/bin/convert -list font', $output, $code);
 
 	//Loop through and extract everything
-	if(!$code){
-		foreach($output as $font){
-			$font = explode(":", $font);
-			if(preg_match('/family/', $font[0])) {
-				$fontFamily[$font[1]] = $font[1];
-				$prev = $font[1];
-			}
-			if(preg_match('/style/', $font[0])) {
-				$styles[$prev][] = $font[1];
-			}
+	foreach($output as $font){
+		$font = explode(":", $font);
+		if(preg_match('/family/', $font[0])) {
+			$fontFamily[$font[1]] = $font[1];
+			$prev = $font[1];
+		}
+		if(preg_match('/style/', $font[0])) {
+			$styles[$prev][] = $font[1];
 		}
 	}
 
