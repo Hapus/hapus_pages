@@ -27,7 +27,7 @@
 	}
 ?>
 <h3 class="subTitle">Supported font families and styles</h3>
-<p>We currently support the following font families. However, if you do wish add a font of your own to this list, just <?php print l('drop us a line', 'add-font-form', array('query' => array('width' => 500), 'attributes' => array('class' => 'colorbox-node'))) ?> and we will have it done for at no extra charges.</p>
+<p>We currently support the following font families. However, if you do wish add a font of your own to this list, just <?php print l('drop us a line', 'add-font-form', array('query' => array('width' => 500), 'attributes' => array('class' => 'colorbox-node'))) ?> and we will be happy to oblige.</p>
 <?php
 	print theme_table(array(
 		'header' => array('Font family', 'Supported styles'),
