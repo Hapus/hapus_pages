@@ -69,7 +69,26 @@ function hapus_pages_menu() {
    'menu_name' => 'menu-documentation-menu',
    'weight' => 4
   );
-  
+
+  //Login/logout links
+  $items['sprintpdf_login'] = array(
+    'title' => 'Log in',
+    'access callback' => 'user_is_anonymous',
+    'page callback' => 'sprintpdf_redirect_login_page',
+    'file' => 'hapus_pages.inc',
+    'menu_name' => 'main-menu',
+    'weight' => 50
+  );
+  $items['sprintpdf_logout'] = array(
+    'title' => 'Log out',
+    'access callback' => 'user_is_logged_in',
+    'page callback' => 'user_logout',
+    'file' => 'user.pages.inc',
+    'file path' => drupal_get_path('module', 'user'),
+    'menu_name' => 'main-menu',
+    'weight' => 50
+  );
+
 
   //The Features menu
   $items['Features/pricing'] = array(

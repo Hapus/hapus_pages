@@ -96,3 +96,10 @@
 
 		return implode(', ', $output);
 	}
+
+	/**
+	 * Redirect the user to the login page
+	 */
+	function sprintpdf_redirect_login_page(){
+		drupal_goto('user');
+	}
