@@ -7,7 +7,7 @@
 	$path = isset($_GET['q']) ? $_GET['q'] : '<front>';
 
 	//Coming soon attributes
-	$comingSoonLink = l('Coming soon', 'http://localhost/~avadhutp/hapus/?q=colorbox/paid-plans-coming-soon&width=500', array('attributes' => array('class' => 'colorbox-node')));
+	$comingSoonLink = l('Coming soon', 'paid-plans-coming-soon', array('query' => array('width' => 500), 'attributes' => array('class' => 'colorbox-node')));
 
 	//Load the necessary nodes
 	$plans = entity_load('node', array(11, 12, 13));
