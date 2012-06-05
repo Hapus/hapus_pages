@@ -28,7 +28,7 @@ curl "http://www.sprintpdf.com/api/me/info.xml?username=<?php print $username ?>
 
 <div id="user-info-php" <?php print $visId == 'user-info-php' ? '' : $classHide ?>>
 <h2>Get user information (PHP)</h2>
-<pre><code>#First, get the class file from https://github.com/avadhutp/SprintPDF-Libraries
+<pre><code>#First, get the class file from https://github.com/Hapus/SprintPDF_PHP_Library
 include('SprintPDF-api.php');
 $sprintPdfObj = new sprintPDF("<?php print $username ?>", "[password]");
 $myInfo =  $client->getInfo();
@@ -49,7 +49,7 @@ http://www.sprintpdf.com/api/pdf > test.pdf
 <div id="generate-pdf-php" <?php print $visId == 'generate-pdf-php' ? '' : $classHide ?>>
 <h2>Generate PDF (PHP)</h2>
 <pre><code>//Create a PDF from a URL
-//First, get the class file from https://github.com/avadhutp/SprintPDF-Libraries
+//First, get the class file from https://github.com/Hapus/SprintPDF_PHP_Library
 include('SprintPDF-api.php');
 $sprintPdfObj = new sprintPDF("<?php print $username ?>", "[password]");
 $pdf = $sprintPdfObj->convertURI('http://www.google.com/');
@@ -68,7 +68,7 @@ echo $pdf;
 
 <pre><code class="php">
 //Create a PDF from a URL
-//First, get the class file from https://github.com/avadhutp/SprintPDF-Libraries
+//First, get the class file from https://github.com/Hapus/SprintPDF_PHP_Library
 include('SprintPDF-api.php');
 $sprintPdfObj = new sprintPDF("<?php print $username ?>", "[password]");
 $pdf = $sprintPdfObj->convertHTML('&lt;html&gt;&lt;body&gt;Hello world!&lt;/body&gt;&lt;/html&gt;');
@@ -86,7 +86,7 @@ echo $pdf;
 </code></pre>
 
 <pre><code>//Create a PDF and save the document at your end
-//First, get the class file from https://github.com/avadhutp/SprintPDF-Libraries
+//First, get the class file from https://github.com/Hapus/SprintPDF_PHP_Library
 include('SprintPDF-api.php');
 $sprintPdfObj = new sprintPDF("<?php print $username ?>", "[password]");
 $out_file = fopen("document.pdf", "wb");
@@ -96,7 +96,7 @@ fclose($out_file);
 
 <pre><code>//Use parameters to customize the PDF output. 
 //All available parameters are listed here: http://www.sprintpdf.com/Documentation/options
-//First, get the class file from https://github.com/avadhutp/SprintPDF-Libraries
+//First, get the class file from https://github.com/Hapus/SprintPDF_PHP_Library
 include('SprintPDF-api.php');
 $sprintPdfObj = new sprintPDF("<?php print $username ?>", "[password]");
 $out_file = fopen("document.pdf", "wb");
