@@ -70,7 +70,7 @@ dl .apiEndpoint{
 	border: solid 1px #F16022;
 	color: #fff;
     border-radius: 3px;
-    padding: 2px 3px 0 3px;
+    padding: 0 3px 0 3px;
     margin-right: 2px;
     cursor: pointer;
     text-decoration: none;
