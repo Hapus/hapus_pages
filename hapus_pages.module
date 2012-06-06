@@ -16,9 +16,9 @@ function hapus_pages_menu() {
   $items['user/dashboard'] = array(
    'title' => 'Dashboard',
    'description' => 'Your Dashboard',
-   'page callback' => 'render_hapus_dashboard',
+   'page callback' => 'render_hapus_reports',
    'access arguments' => array('access content'),
-   'file' => 'hapus_dashboard.inc'
+   'file' => 'hapus_pages.inc'
   );
 
   //The Pricing menu
@@ -139,6 +139,10 @@ function hapus_pages_theme() {
     ),
     'font-list' => array(
       'template' => 'templates/font-list',
+    ),
+    //Reports and user related pages
+    'dashboard' => array(
+      'template' => 'templates/dashboard',
     ),
   );
 }

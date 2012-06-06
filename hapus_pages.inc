@@ -33,7 +33,19 @@
 	}
 
 	/**
-	 * Tpl.php pointer for API examples
+	 * Tpl.php pointer for all User/pages (reports)
+	 */
+	function render_hapus_reports(){
+		switch(arg(1)){
+			case 'dashboard':
+				drupal_set_title('Your Dashboard');
+				return theme('dashboard');
+				break;
+		}
+	}
+
+	/**
+	 * Tpl.php pointer for Sprint PDF Dxamples
 	 */
 	function render_hapus_api_example(){
 		drupal_set_title('REST API examples');
@@ -102,4 +114,29 @@
 	 */
 	function sprintpdf_redirect_login_page(){
 		drupal_goto('user');
+	}
+
+	/**
+	 * Render the blocks on Hapus Dashboard
+	 */
+	function render_hapus_dashboard_block($block, $cnt){
+		$class = 'dashboardBlock ';
+		if($cnt%2 ==0)
+			$class .= 'center';
+		if($cnt%3 ==0)
+			$class .= 'right';
+
+		$blockContent = theme_item_list(array(
+			'items' => $block['content'],
+			'type' => 'ul',
+			'title' => null,
+			'attributes' => array()
+		));
+
+		$output = '<div class="' . $class . '">';
+		$output .= '<h3>' . $block['header'] . '</h3>';
+		$output .= '<div class="hbContent">' . $blockContent . '</div>';
+		$output .= '</div>';
+
+		return $output;
 	}

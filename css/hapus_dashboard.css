@@ -1,19 +1,23 @@
-/* Commons */
-#hapus_dashboard{
+/* Common */
+#dashboard, #dashLeft, #dashRight{
 	float: left;
+}
+#dashboard{
 	width: 100%;
 	margin: 0.5em 0 1.5em 0;
 }
-#hapus_dashboard ul, #hapus_dashboard li{
-	padding: 0;
-	margin: 0;
-	list-style-type: none;
+#dashLeft{
+	width: 30%;
+}
+#dashRight{
+	float: right;
+	width: 67%;
 }
 
 /* Common styling for all blocks */
 .dashboardBlock{
 	float: left;
-	width: 31.5%;
+	width: 100%;
 	word-wrap: break-word;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -22,6 +26,7 @@
 	background: #f8f8f8;
 	border-bottom: solid 1px #f1f1f1;
 	color: #9c9c9c;
+	margin-bottom: 2em;
 }
 .dashboardBlock h3{
 	color: #f16022;
@@ -32,6 +37,11 @@
 	line-height: 2.5em;
 	font-size: 1.1em;
 	font-weight: normal;
+}
+#dashLeft ul, #dashLeft li{
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
 }
 .dashboardBlock .hbContent{
 	padding: 0.5em 1em;
@@ -44,9 +54,14 @@
 	margin-left: 2.3em;
 }
 
-/* API Key */
-#apiKey{
-	width: 78%;
-	font-family: 'Courier';
-	color: #9c9c9c;
+/* Table styling */
+#dashRight h2 {
+	color: #F66A2D;
+	font-family: 'Open Sans',sans-serif;
+	font-weight: 300;
+	margin-top: 0;
+}
+#dashRight table{
+	width: 100%;
+	margin-bottom: 1em;
 }
