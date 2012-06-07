@@ -42,6 +42,7 @@
 	padding: 0;
 	margin: 0;
 	list-style-type: none;
+	white-space: normal;
 }
 .dashboardBlock .hbContent{
 	padding: 0.5em 1em;
@@ -64,4 +65,34 @@
 #dashRight table{
 	width: 100%;
 	margin-bottom: 1em;
+}
+
+/*Quickstarter block*/
+.qsNumber{
+	float: left;
+	background: #F16022;
+	color: #fff;
+	border-radius: 6em;
+	width: 24px;
+	height: 24px;
+	text-align: center;
+	margin-right: 0.5em;
+}
+#quickstarter li {
+	margin: 0 0 10px 0;
+}
+#quickstarter li.last{
+	margin-bottom: 5px;
+}
+#quickstarter .item-list{
+	margin-top: 5px;
+}
+
+/* Empty dashboard help */
+#emptyHelp {
+	padding: 0 0 0 1.5em;
+	margin-top: -0.5em;
+}
+#emptyHelp li {
+	margin-bottom: 0.5em;
 }

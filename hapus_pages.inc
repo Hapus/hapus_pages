@@ -133,7 +133,7 @@
 			'attributes' => array()
 		));
 
-		$output = '<div class="' . $class . '">';
+		$output = '<div class="' . $class . '" id="' . str_replace(' ', '_', strtolower($block['header'])) . '">';
 		$output .= '<h3>' . $block['header'] . '</h3>';
 		$output .= '<div class="hbContent">' . $blockContent . '</div>';
 		$output .= '</div>';
