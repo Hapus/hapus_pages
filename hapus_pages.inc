@@ -53,6 +53,14 @@
 	}
 
 	/**
+	 * Tpl.php pointer for Sprint PDF *Try It* page
+	 */
+	function render_hapus_try_it(){
+		drupal_set_title('Try it!');
+		return theme('try-it');
+	}
+
+	/**
 	 * Auxillary function to generate inline help for the pricing table page
 	 */
 	function _createInlineHelp($text, $type) {
@@ -139,4 +147,15 @@
 		$output .= '</div>';
 
 		return $output;
+	}
+
+	/**
+	 * Render the headers on the *Try it* page
+	 */
+	function render_try_it_headers($headers){
+		$ret = '';
+		foreach($headers as $id => $label){
+			$ret .= '<div id="' . $id . '" class="tryItTab"><div class="headerLabel">' . $label . '</div><div class="headerTriangle"></div></div>';
+		}
+		return $ret;
 	}

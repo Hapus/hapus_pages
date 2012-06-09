@@ -1,0 +1,39 @@
+/* Try it header */
+#tryHeader{
+	float: left;
+	width: 100%;
+	margin-bottom: 1.5em;
+}
+.tryItTab{
+	float: left;
+	width: 25%;
+	cursor: pointer
+}
+#conWysiwyg{
+	float: right;
+}
+#conHtml{
+	margin-left: 13%;
+}
+.headerLabel{
+	background: #f3f3f3;
+	color: #4c4c4c;
+	text-align: center;
+	height: 30px;
+	line-height: 28px;
+}
+.headerTriangle{
+	border-color: #f3f3f3 transparent transparent;
+    border-style: solid;
+    border-width: 10px 10px 0;
+	float: left;
+	margin-left: 46%;
+}
+
+.tryItTab:hover .headerLabel{
+	background: #4c4c4c;
+	color: #fff;
+}
+.tryItTab:hover .headerTriangle{
+	border-color: #4c4c4c transparent transparent;
+}

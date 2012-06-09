@@ -102,13 +102,23 @@ function hapus_pages_menu() {
   );
   
 
-  //Stand alones
+  //Stand alones-->API examples page
   $items['api-example'] = array(
    'title' => 'API example',
    'description' => 'API example',
    'page callback' => 'render_hapus_api_example',
    'access arguments' => array('access content'),
    'file' => 'hapus_pages.inc'
+  );
+
+  //Stand alones-->*Try it* page
+  $items['try-it'] = array(
+   'title' => 'Try it',
+   'description' => 'Try out Sprint PDF',
+   'page callback' => 'render_hapus_try_it',
+   'access arguments' => array('access content'),
+   'file' => 'hapus_pages.inc',
+   'menu_name' => 'menu-main-menu',
   );
 
   return $items;
@@ -126,6 +136,9 @@ function hapus_pages_theme() {
     //Stand-alone pages
     'api-example' => array(
       'template' => 'templates/api_example',
+    ),
+    'try-it' => array(
+      'template' => 'templates/try_it',
     ),
     //Documentation pages
     'api' => array(
