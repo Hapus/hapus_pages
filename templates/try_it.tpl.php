@@ -15,6 +15,9 @@
 		<?php print drupal_render(tryItFormGen('conPage')) ?>
 	</div>
 	<div id="conHtmlContent" class="tabContent">
-		Delenit lius luptatum nunc nobis euismod. Vel quod nulla illum legere mazim. Dolor dolor facer tincidunt consectetuer in. Velit consequat dolore euismod littera volutpat. 
+		<?php print drupal_render(tryItFormGen('conHtml')) ?> 
+	</div>
+	<div id="conWysiwygContent" class="tabContent">
+		<?php print drupal_render(tryItFormGen('conWysiwyg')) ?> 
 	</div>
 </div>

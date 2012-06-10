@@ -169,7 +169,10 @@
 				return drupal_get_form('conPageFormGen');
 				break;
 			case 'conHtml':
-				return drupal_get_form('conPageFormGen');
+				return drupal_get_form('conHtmlFormGen');
+				break;
+			case 'conWysiwyg':
+				return drupal_get_form('conWysiwygFormGen');
 				break;
 		}
 	}
@@ -193,6 +196,54 @@
 	}
 
 	/**
+	 * The *convert HTML* form
+	 **/
+	function conHtmlFormGen($form_state){
+		$defVal[] = '<html>';
+		$defVal[] = '&#09;<body>';
+		$defVal[] = '&#09;&#09;Hello world!';
+		$defVal[] = '&#09;</body>';
+		$defVal[] = '</html>';
+
+		$conHtmlForm['rawHtml'] = array(
+			'#title' => t('Raw HTML code'),
+			'#type' => 'textarea',
+			'#description' => t('Enter valid HTML. You can include inline CSS, JS, and even remote images.'),
+			'#required' => true,
+			'#default_value' => html_entity_decode(implode('&#13;&#10;', $defVal))
+		);
+		$conHtmlForm['submit'] = array(
+			'#type' => 'submit',
+			'#value' => t('Submit')
+		);
+
+		return $conHtmlForm;
+	}
+
+	/**
+	 * The *convert WYSIWYG* form
+	 **/
+	function conWysiwygFormGen($form_state){
+		$defVal = '<p>Hey there. Type here and we will convert it into PDF! Experiment with font, style, color, etc. You can even insert images.</p>';
+		$defVal .= '<p><strong>Hint:</strong> Generally, the funnies render really well:</p>';
+		$defVal .= '<img src="http://1.bp.blogspot.com/-tjRCV3oKnCw/Tr1HGrDTSCI/AAAAAAAALHE/Re0BocoIu-M/s1600/Loldog-funny-pictures-you-got-it-babe.jpg" />';
+
+		$conWysiwygForm['wysiwygHtml'] = array(
+			'#title' => t('Type in the text you\'d like to convert'),
+			'#type' => 'text_format',
+			'#required' => true,
+			'#default_value' => html_entity_decode($defVal),
+			'#format' => 'full_html'
+		);
+		$conWysiwygForm['submit'] = array(
+			'#type' => 'submit',
+			'#value' => t('Submit')
+		);
+
+		return $conWysiwygForm;
+	}	
+
+	/**
 	 * The form submit handler for page converter
 	**/
 	function conPageFormGen_submit($form, &$form_state){
@@ -202,6 +253,46 @@
 		//Instantiate the object
 		$sprintPdfObj = new SprintPDF('admin', 'coldcoldbmap');
 		$pdf = $sprintPdfObj->convertURI($form['urlPath']['#value']);
+
+		//Echo out the PDF as an attachment
+		header("Content-Type: application/pdf");
+		header("Cache-Control: no-cache");
+		header("Accept-Ranges: none");
+		header("Content-Disposition: attachment; filename=\"sprintpdf_example.pdf\"");
+		echo $pdf; 
+		drupal_exit();
+	}
+
+	/**
+	 * The form submit handler for html converter
+	**/
+	function conHtmlFormGen_submit($form, &$form_state){
+		//Include the SprintPDF PHP library
+		module_load_include('php', 'hapus_pages', 'phplibs/sprintpdf');
+
+		//Instantiate the object
+		$sprintPdfObj = new SprintPDF('admin', 'coldcoldbmap');
+		$pdf = $sprintPdfObj->convertHTML($form['rawHtml']['#value']);
+
+		//Echo out the PDF as an attachment
+		header("Content-Type: application/pdf");
+		header("Cache-Control: no-cache");
+		header("Accept-Ranges: none");
+		header("Content-Disposition: attachment; filename=\"sprintpdf_example.pdf\"");
+		echo $pdf; 
+		drupal_exit();
+	}
+
+	/**
+	 * The form submit handler for the WYSIWYG editor
+	**/
+	function conWysiwygFormGen_submit($form, &$form_state){
+		//Include the SprintPDF PHP library
+		module_load_include('php', 'hapus_pages', 'phplibs/sprintpdf');
+
+		//Instantiate the object
+		$sprintPdfObj = new SprintPDF('admin', 'coldcoldbmap');
+		$pdf = $sprintPdfObj->convertHTML($form['wysiwygHtml']['value']['#value']);
 
 		//Echo out the PDF as an attachment
 		header("Content-Type: application/pdf");

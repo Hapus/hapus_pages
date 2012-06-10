@@ -2,7 +2,7 @@
 #tryHeader{
 	float: left;
 	width: 100%;
-	margin-bottom: 1.5em;
+	margin-bottom: 0.5em;
 }
 .tryItTab{
 	float: left;
@@ -24,7 +24,7 @@
 }
 .headerTriangle{
 	border-color: #f3f3f3 transparent transparent;
-    border-style: solid;
+    border-style: solid outset;
     border-width: 10px 10px 0;
 	float: left;
 	margin-left: 46%;
@@ -39,6 +39,20 @@
 }
 
 /* Tab content */
-.tabContent{
+#tryContent{
+	float: left;
+	width: 100%;
+	margin-bottom: 1.5em;
+}
+
+/* WYSIWYG form */
+#edit-wysiwyghtml-format{
 	display: none;
+}
+#edit-wysiwyghtml-value{
+	width: 920px;
+	height: 200px;
+}
+#conwysiwygformgen .form-type-textarea {
+	margin-bottom: 1.5em;
 }
