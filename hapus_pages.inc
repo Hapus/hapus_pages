@@ -185,7 +185,8 @@
 			'#title' => t('URL of the page to convert'),
 			'#type' => 'textfield',
 			'#description' => t('Enter the URL you\'d like to convert. Please include http:// or https://.'),
-			'#required' => true
+			'#required' => true,
+			'#default_value' => 'http://www.basic-japanese.com/'
 		);
 		$conPageForm['submit'] = array(
 			'#type' => 'submit',
