@@ -36,6 +36,11 @@
 	 * Tpl.php pointer for all User/pages (reports)
 	 */
 	function render_hapus_reports(){
+		//Check if the user is logged in first
+		global $user;
+		if(!$user->uid)
+			drupal_goto('landing');
+
 		switch(arg(1)){
 			case 'dashboard':
 				drupal_set_title('Your Dashboard');
