@@ -7,7 +7,7 @@
 .tryItTab{
 	float: left;
 	width: 25%;
-	cursor: pointer
+	cursor: pointer;
 }
 #conWysiwyg{
 	float: right;
@@ -30,10 +30,15 @@
 	margin-left: 46%;
 }
 
-.tryItTab:hover .headerLabel{
+.tryItTab:hover .headerLabel, .activeTab .headerLabel{
 	background: #4c4c4c;
 	color: #fff;
 }
-.tryItTab:hover .headerTriangle{
+.tryItTab:hover .headerTriangle, .activeTab .headerTriangle{
 	border-color: #4c4c4c transparent transparent;
+}
+
+/* Tab content */
+.tabContent{
+	display: none;
 }

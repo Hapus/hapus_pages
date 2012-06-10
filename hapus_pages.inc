@@ -159,3 +159,55 @@
 		}
 		return $ret;
 	}
+
+	/**
+	 * The *try it* form 
+	 **/
+	function tryItFormGen($type){
+		switch ($type) {
+			case 'conPage':
+				return drupal_get_form('conPageFormGen');
+				break;
+			case 'conHtml':
+				return drupal_get_form('conPageFormGen');
+				break;
+		}
+	}
+
+	/**
+	 * The *convert a web page* form
+	 **/
+	function conPageFormGen($form_state){
+		$conPageForm['urlPath'] = array(
+			'#title' => t('URL of the page to convert'),
+			'#type' => 'textfield',
+			'#description' => t('Enter the URL you\'d like to convert. Please include http:// or https://.'),
+			'#required' => true
+		);
+		$conPageForm['submit'] = array(
+			'#type' => 'submit',
+			'#value' => t('Submit')
+		);
+
+		return $conPageForm;
+	}
+
+	/**
+	 * The form submit handler for page converter
+	**/
+	function conPageFormGen_submit($form, &$form_state){
+		//Include the SprintPDF PHP library
+		module_load_include('php', 'hapus_pages', 'phplibs/sprintpdf');
+
+		//Instantiate the object
+		$sprintPdfObj = new SprintPDF('admin', 'coldcoldbmap');
+		$pdf = $sprintPdfObj->convertURI($form['urlPath']['#value']);
+
+		//Echo out the PDF as an attachment
+		header("Content-Type: application/pdf");
+		header("Cache-Control: no-cache");
+		header("Accept-Ranges: none");
+		header("Content-Disposition: attachment; filename=\"sprintpdf_example.pdf\"");
+		echo $pdf; 
+		drupal_exit();
+	}

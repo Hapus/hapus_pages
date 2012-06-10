@@ -12,12 +12,17 @@
 					$('#' + contentTabID).show();
 
 					//Add the active class to the clicked tab
+					$('.tryItTab').removeClass('activeTab');
+					$this.addClass('activeTab');
 				}
 
 				//Add the listener
 				$('.tryItTab').live('click', function(e){
 					tabClickListener($(this), e);
 				});
+
+				//Call the first click
+				$('#conPage').click();
 			});
 		}
 	};
